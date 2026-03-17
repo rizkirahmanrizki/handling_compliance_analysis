@@ -158,19 +158,96 @@ This project demonstrates:
 
 ---
 
-# 📁 Project Structure
+---
+
+# 📊 Aggregated Compliance Analysis (Summary Version)
+
+In addition to the row-level analysis, this project also includes a **summary query** designed for dashboards and trend monitoring.
+
+---
+
+## 🎯 Purpose
+
+While the detailed query focuses on individual records, this version provides:
+
+* aggregated compliance metrics
+* trend analysis over time
+* performance comparison across locations
+
+---
+
+## 🔗 Analytical Flow
 
 ```text
-handling-compliance-analysis
-│
-├── sql
-│   └── handling_compliance_analysis.sql
-│
-└── README.md
+Raw Data
+   ↓
+Classification Logic (expected vs actual)
+   ↓
+Compliance Status
+   ↓
+Aggregation (this query)
+   ↓
+Dashboard Metrics
 ```
 
 ---
 
-# 📜 License
+## 📈 Output Metrics
 
-MIT
+| Metric               | Description                              |
+| -------------------- | ---------------------------------------- |
+| total_records        | Total number of processed items          |
+| compliant            | Items handled as expected                |
+| alternative_handling | Handled differently but still acceptable |
+| non_compliant        | Handling does not match expectation      |
+
+---
+
+## ⏱ Time Aggregation
+
+The query supports dynamic time grouping:
+
+* `hour`
+* `day`
+* `week`
+
+This allows flexible analysis depending on reporting needs.
+
+---
+
+## 🧠 Why This Matters
+
+This summary layer is important because:
+
+* raw data is too granular for decision-making
+* aggregation enables trend detection
+* dashboards require summarized metrics
+* stakeholders need high-level insights
+
+---
+
+## 🧩 How It Connects
+
+This query builds directly on the **row-level classification logic**:
+
+```text
+Detailed Classification Query
+        ↓
+Summary Aggregation Query
+        ↓
+BI Dashboard
+```
+
+---
+
+## 🚀 Portfolio Value
+
+This demonstrates:
+
+* ability to design **data models for dashboards**
+* transforming raw data into **decision-ready metrics**
+* building **multi-layer SQL pipelines (detail → summary)**
+* applying **real-world business logic**
+
+---
+
